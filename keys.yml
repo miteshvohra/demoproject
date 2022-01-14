@@ -1,11 +1,13 @@
 ---
-  - name: Deploy Spare boxes
+  - name: Deploy key
     hosts: all
     remote_user: sccStudent
     gather_facts: false
-
-      - name: Add ssh keys
+    
+    tasks:
+      - name: Add ssh keys to student boxes
         authorized_key:
           state: present
           user: sccStudent
           key: "{{ lookup('file', '~/.ssh/id_rsa.pub') }}"
+#          key: https://raw.githubusercontent.com/miteshvohra/demoproject/main/mvohra-mbp15.pub
