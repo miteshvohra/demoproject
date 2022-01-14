@@ -1,0 +1,12 @@
+[spares]
+192.168.0.27
+
+[students]
+192.168.0.26
+192.168.0.25
+
+[spares:vars]
+ansible_password = splunk3du111
+
+[students:vars]
+ansible_ssh_pass = splunk3du
