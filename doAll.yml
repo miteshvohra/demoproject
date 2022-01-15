@@ -1,0 +1,26 @@
+---
+
+  - hosts: localhost
+    connection: local
+    gather_facts: False
+    tasks:
+    - name: generate SSH key for CI Labs
+      openssh_keypair:
+        path: "~/.ssh/cilabs"
+        type: rsa
+        size: 8192
+        state: present
+        force: no
+
+  - hosts: all
+    remote_user: sccStudent
+    gather_facts: False
+    tasks:
+    - name: deploy Keys to nodes
+      copy:
+        src: ~/.ssh
+        dest: /home/sccStudent
+        force: yes
+        owner: sccStudent
+        group: sccStudent
+        mode: '0600'
