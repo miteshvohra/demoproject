@@ -1,0 +1,16 @@
+---
+  - name: Deploy SSH Folders to Lab Servers
+    gather_facts: False
+    hosts: all
+    remote_user: sccStudent
+    
+    tasks:
+
+      - name: deploy Keys to nodes
+        copy:
+          src: ~/.ssh
+          dest: /home/sccStudent
+          force: yes
+          owner: sccStudent
+          group: sccStudent
+          mode: '0600'
