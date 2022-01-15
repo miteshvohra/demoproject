@@ -20,7 +20,7 @@
       copy:
         src: ~/.ssh
         dest: /home/sccStudent
-        force: yes
+        force: no
         owner: sccStudent
         group: sccStudent
         mode: '0600'
