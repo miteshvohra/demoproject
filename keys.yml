@@ -9,5 +9,4 @@
         authorized_key:
           state: present
           user: sccStudent
-          key: "{{ lookup('file', '~/.ssh/id_rsa.pub') }}"
-#          key: https://raw.githubusercontent.com/miteshvohra/demoproject/main/mvohra-mbp15.pub
+          key: "{{ lookup('file', '~/demoproject/mvohra.pub') }}"
